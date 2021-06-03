@@ -1,6 +1,7 @@
 package rc.legostore.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
@@ -32,6 +33,7 @@ public class LegoSet {
 
     protected LegoSet(){}
 
+    @PersistenceConstructor
     public LegoSet(String name,
                    String theme,
                    LegoSetDifficulty difficulty,
@@ -78,7 +80,5 @@ public class LegoSet {
         return nbParts;
     }
 
-    public PaymentOptions getPaymentOptions() {
-        return paymentOptions;
-    }
+    
 }

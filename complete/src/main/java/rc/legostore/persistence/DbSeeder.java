@@ -88,6 +88,6 @@ public class DbSeeder implements CommandLineRunner {
 
         Collection<LegoSet> initialProducts = Arrays.asList(milleniumFalcon, mindstormsEve,mcLarenSenna,skyPolice);
 
-        this.legoSetRepository.insert(initialProducts);
+       // this.legoSetRepository.insert(initialProducts);
     }
 }

@@ -1,12 +1,19 @@
 package rc.legostore.model;
 
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
 public class ProductReview {
     @TextIndexed
     private String userName;
     private int rating;
+    
+    public ProductReview()
+    {
+    	
+    }
 
+    @PersistenceConstructor
     public ProductReview(String userName, int rating) {
         this.userName = userName;
         this.rating = rating;

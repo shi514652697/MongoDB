@@ -1,6 +1,7 @@
 package rc.legostore.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.PersistenceConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -9,7 +10,14 @@ public class PaymentOptions {
     private String id;
     private PaymentType type;
     private int fee;
-
+    
+    
+    public PaymentOptions()
+    {
+    	
+    }
+    
+    @PersistenceConstructor
     public PaymentOptions(PaymentType type, int fee){
         this.type = type;
         this.fee = fee;

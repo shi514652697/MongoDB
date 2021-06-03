@@ -2,11 +2,19 @@ package rc.legostore.model;
 
 import java.time.LocalDate;
 
+import org.springframework.data.annotation.PersistenceConstructor;
+
 public class DeliveryInfo {
     private LocalDate deliveryDate;
     private int deliveryFee;
     private boolean inStock;
 
+    public DeliveryInfo()
+    {
+    	
+    }
+    
+    @PersistenceConstructor
     public DeliveryInfo(LocalDate deliveryDate,
                         int deliveryFee,
                         boolean inStock) {
